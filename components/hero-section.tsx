@@ -89,7 +89,7 @@ export function HeroSection() {
             </div>
             
             {/* Open to Work Badge - On Right Side */}
-            <div className="absolute left-1/2 -translate-x-1/2 -top-10 sm:left-auto sm:translate-x-0 sm:-right-24 sm:top-6 flex flex-col items-start">
+            <div className="absolute top-1/2 -translate-y-1/2 left-full ml-12 flex flex-col items-start">
               <div className="bg-gradient-to-r from-emerald-500 to-green-400 text-white text-xs sm:text-sm font-black px-4 py-2 rounded-lg shadow-lg shadow-emerald-500/50 flex items-center gap-2 animate-pulse whitespace-nowrap">
                 <span className="relative flex h-3 w-3">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
