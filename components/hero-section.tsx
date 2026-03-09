@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
 const typingTexts = [
-  "SOC Analyst L1",
+  "SOC Analyst",
+  "Cybersecurity Analyst",
+   "Incident Responder",
   "Threat Detection Expert",
   "SIEM Monitoring Specialist",
-  "Incident Responder",
   "Security Operations Pro",
 ]
 
