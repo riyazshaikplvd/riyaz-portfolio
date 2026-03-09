@@ -5,13 +5,13 @@ import { MapPin, Download, Mail, Phone, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
-const typingTexts = [
-  "SOC Analyst",
-  "Cybersecurity Analyst",
-   "Incident Responder",
-  "Threat Detection Expert",
-  "SIEM Monitoring Specialist",
-  "Security Operations Pro",
+ const typingTexts = [
+  { text: "SOC Analyst", color: "text-[#00FFFF] drop-shadow-[0_0_14px_#00FFFF]" },
+  { text: "Cybersecurity Analyst", color: "text-[#00BFFF] drop-shadow-[0_0_14px_#00BFFF]" },
+  { text: "Incident Responder", color: "text-[#FF8C00] drop-shadow-[0_0_14px_#FF8C00]" },
+  { text: "Threat Detection Expert", color: "text-[#FF0033] drop-shadow-[0_0_14px_#FF0033]" },
+  { text: "SIEM Monitoring Specialist", color: "text-[#C026FF] drop-shadow-[0_0_14px_#C026FF]" },
+  { text: "Security Operations Pro", color: "text-[#00FF7F] drop-shadow-[0_0_14px_#00FF7F]" },
 ]
 
 export function HeroSection() {
@@ -22,7 +22,7 @@ export function HeroSection() {
   const effectIdRef = useRef(0)
 
   useEffect(() => {
-    const currentFullText = typingTexts[currentTextIndex]
+    const currentFullText = typingTexts[currentTextIndex].text
     
     const timeout = setTimeout(() => {
       if (!isDeleting) {
@@ -110,7 +110,7 @@ export function HeroSection() {
           {/* Typing Animation - BRIGHT */}
           <div className="h-12 mb-4 flex items-center justify-center">
             <span className="text-cyan-500 text-2xl font-mono font-bold mr-2">{"<"}</span>
-            <span className="text-2xl sm:text-3xl text-cyan-300 font-mono font-black drop-shadow-[0_0_15px_rgba(34,211,238,0.6)]">
+           <span className={`text-2xl sm:text-3xl font-mono font-black ${typingTexts[currentTextIndex].color}`}>
               {displayedText}
               <span className="animate-pulse text-cyan-400 ml-0.5">|</span>
             </span>
