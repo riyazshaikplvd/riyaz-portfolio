@@ -7,9 +7,9 @@ import Image from "next/image"
 
  const typingTexts = [
   { text: "SOC Analyst", color: "text-[#00FFFF] drop-shadow-[0_0_14px_#00FFFF]" },
-  { text: "Cybersecurity Analyst", color: "text-[#00BFFF] drop-shadow-[0_0_14px_#00BFFF]" },
   { text: "Incident Responder", color: "text-[#FF8C00] drop-shadow-[0_0_14px_#FF8C00]" },
   { text: "Threat Detection Expert", color: "text-[#FF0033] drop-shadow-[0_0_14px_#FF0033]" },
+  { text: "Cybersecurity Analyst", color: "text-[#00BFFF] drop-shadow-[0_0_14px_#00BFFF]" },
   { text: "SIEM Monitoring Specialist", color: "text-[#C026FF] drop-shadow-[0_0_14px_#C026FF]" },
   { text: "Security Operations Pro", color: "text-[#00FF7F] drop-shadow-[0_0_14px_#00FF7F]" },
 ]
