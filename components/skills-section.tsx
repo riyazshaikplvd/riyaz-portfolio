@@ -1,5 +1,5 @@
 "use client"
-
+ 
 import { useState } from "react"
 import {
   Shield,
@@ -11,13 +11,21 @@ import {
   Monitor,
   Database,
   Lock,
-  Terminal,
 } from "lucide-react"
-
+import { LucideIcon } from "lucide-react"
+ 
+// ✅ FIX: Proper TypeScript interface instead of `any`
+interface SkillCategory {
+  title: string
+  icon: LucideIcon
+  skills: string[]
+}
+ 
 export default function SkillsSection() {
-  const [selected, setSelected] = useState<any>(null)
-
-  const skillCategories = [
+  // ✅ FIX: Typed state — SkillCategory | null instead of any
+  const [selected, setSelected] = useState<SkillCategory | null>(null)
+ 
+  const skillCategories: SkillCategory[] = [
     {
       title: "SIEM Tools",
       icon: Server,
@@ -64,25 +72,21 @@ export default function SkillsSection() {
       skills: ["Active Directory", "Windows Domain", "IAM Basics"],
     },
   ]
-
+ 
   return (
     <section id="skills" className="py-20 px-4">
       <div className="max-w-6xl mx-auto text-center">
-
         <h2 className="text-4xl font-bold text-white mb-4">
           Skills & Technologies
         </h2>
-
         <p className="text-slate-400 mb-12">
           Hands-on cybersecurity skills built through labs and real-world practice
         </p>
-
+ 
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
           {skillCategories.map((category, i) => {
             const Icon = category.icon
-
             return (
               <div
                 key={i}
@@ -95,28 +99,28 @@ export default function SkillsSection() {
                     {category.title}
                   </h3>
                 </div>
-
-                <p className="text-slate-400 text-sm">
-                  Click to view skills
-                </p>
+                <p className="text-slate-400 text-sm">Click to view skills</p>
               </div>
             )
           })}
         </div>
       </div>
-
-      {/* POPUP */}
+ 
+      {/* POPUP MODAL */}
       {selected && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-
-          <div className="bg-slate-900 p-8 rounded-xl max-w-lg w-full shadow-2xl border border-cyan-500/30">
-
+        <div
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          onClick={() => setSelected(null)} // ✅ click outside to close
+        >
+          <div
+            className="bg-slate-900 p-8 rounded-xl max-w-lg w-full shadow-2xl border border-cyan-500/30"
+            onClick={(e) => e.stopPropagation()} // ✅ prevent close on inner click
+          >
             <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">
               {selected.title}
             </h3>
-
             <div className="flex flex-wrap gap-3 justify-center">
-              {selected?.skills?.map((skill, i) => (
+              {selected.skills.map((skill, i) => (
                 <span
                   key={i}
                   className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full text-sm hover:scale-110 transition"
@@ -125,10 +129,9 @@ export default function SkillsSection() {
                 </span>
               ))}
             </div>
-
             <button
               onClick={() => setSelected(null)}
-              className="mt-6 w-full py-2 bg-cyan-500 text-black rounded-lg hover:bg-cyan-400 transition"
+              className="mt-6 w-full py-2 bg-cyan-500 text-black rounded-lg hover:bg-cyan-400 transition font-semibold"
             >
               Close
             </button>
