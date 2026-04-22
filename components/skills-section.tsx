@@ -11,6 +11,7 @@ import {
   Monitor,
   Database,
   Lock,
+  Terminal,
 } from "lucide-react"
 
 export default function SkillsSection() {
