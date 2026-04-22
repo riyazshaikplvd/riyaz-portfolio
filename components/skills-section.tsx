@@ -9,7 +9,6 @@ import {
   Cloud,
   Code,
   Monitor,
-  Terminal,
   Database,
   Lock,
 } from "lucide-react"
@@ -21,55 +20,46 @@ export default function SkillsSection() {
     {
       title: "SIEM Tools",
       icon: Server,
-      color: "cyan",
       skills: ["Splunk", "Wazuh", "IBM QRadar", "Microsoft Sentinel", "ELK Stack"],
     },
     {
       title: "Security Frameworks",
       icon: Shield,
-      color: "blue",
       skills: ["MITRE ATT&CK", "OWASP Top 10", "ISO 27001", "NIST", "CIS Controls"],
     },
     {
       title: "Security Tools",
       icon: Bug,
-      color: "red",
       skills: ["Wireshark", "Nmap", "Burp Suite", "Metasploit", "Nessus"],
     },
     {
       title: "Network Security",
       icon: Network,
-      color: "green",
       skills: ["TCP/IP", "IDS/IPS", "Firewalls", "VPN", "DNS Security"],
     },
     {
       title: "Cloud & Endpoint",
       icon: Cloud,
-      color: "orange",
       skills: ["AWS", "Microsoft 365", "Defender", "CrowdStrike", "SentinelOne"],
     },
     {
       title: "Programming",
       icon: Code,
-      color: "yellow",
       skills: ["Python", "SQL", "Bash", "PowerShell"],
     },
     {
       title: "Operating Systems",
       icon: Monitor,
-      color: "purple",
       skills: ["Windows", "Linux", "Kali Linux", "Ubuntu"],
     },
     {
       title: "Threat Intelligence",
       icon: Database,
-      color: "pink",
       skills: ["Threat Hunting", "YARA", "Sigma Rules", "MISP"],
     },
     {
       title: "Identity & Access",
       icon: Lock,
-      color: "teal",
       skills: ["Active Directory", "Windows Domain", "IAM Basics"],
     },
   ]
@@ -83,7 +73,7 @@ export default function SkillsSection() {
         </h2>
 
         <p className="text-slate-400 mb-12">
-          Hands-on cybersecurity skills built through labs, projects, and real-world simulations
+          Hands-on cybersecurity skills built through labs and real-world practice
         </p>
 
         {/* GRID */}
@@ -96,10 +86,10 @@ export default function SkillsSection() {
               <div
                 key={i}
                 onClick={() => setSelected(category)}
-                className={`cursor-pointer p-6 rounded-xl border border-slate-700 bg-slate-900 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-${category.color}-500/30`}
+                className="cursor-pointer p-6 rounded-xl border border-slate-700 bg-slate-900 hover:scale-105 transition-all duration-300 hover:shadow-cyan-500/30"
               >
                 <div className="flex items-center gap-3 mb-4 justify-center">
-                  <Icon className={`w-6 h-6 text-${category.color}-400`} />
+                  <Icon className="w-6 h-6 text-cyan-400" />
                   <h3 className="text-lg font-semibold text-white">
                     {category.title}
                   </h3>
@@ -118,7 +108,7 @@ export default function SkillsSection() {
       {selected && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
 
-          <div className="bg-slate-900 p-8 rounded-xl max-w-lg w-full animate-fadeUp shadow-2xl border border-cyan-500/30">
+          <div className="bg-slate-900 p-8 rounded-xl max-w-lg w-full shadow-2xl border border-cyan-500/30">
 
             <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">
               {selected.title}
