@@ -128,7 +128,7 @@ export function HeroSection() {
           {/* Location - BOLD */}
           <div className="flex items-center justify-center gap-2 text-slate-200 mb-6">
             <MapPin className="h-5 w-5 text-cyan-400" />
-            <span className="text-base font-bold">Bengaluru, Karnataka, India</span>
+            <span className="text-base font-bold">🇮🇳 India (Open to Relocation)</span>
           </div>
 
           {/* CTA Buttons */}
