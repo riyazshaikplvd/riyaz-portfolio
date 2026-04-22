@@ -30,7 +30,7 @@ export function AboutSection() {
             Hands-on experience in <span className="text-cyan-400">SIEM monitoring</span>, 
             <span className="text-cyan-400">alert triage</span>, 
             <span className="text-cyan-400">incident response</span>, and 
-            <span className="text-cyan-400">threat detection</span> through real-world lab environments including TryHackMe, LetsDefend, and Hack The Box.
+            <span className="text-cyan-400">threat detection</span> through real-world lab environments including </span className="text-orange-400"> TryHackMe, LetsDefend, and Hack The Box</span>
           </p>
 
           <p>
