@@ -56,7 +56,6 @@ export default function Portfolio() {
       <main className="relative z-10">
         <HeroSection />
         <AboutSection />
-        <SOCDashboardSection />
         <SkillsSection />
         <ProjectsSection />
         <CapstoneProjectSection />
