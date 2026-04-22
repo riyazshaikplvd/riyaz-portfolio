@@ -1,110 +1,166 @@
 "use client"
 
-import { Shield, Server, Bug, Network, Cloud, Code, Monitor, Terminal } from "lucide-react"
+import { useState } from "react"
+import {
+  Shield,
+  Server,
+  Bug,
+  Network,
+  Cloud,
+  Code,
+  Monitor,
+  Terminal,
+  Database,
+  Lock
+} from "lucide-react"
 
 const skillCategories = [
   {
-    title: "SIEM Tools",
+    title: "SIEM & Log Management",
     icon: Server,
-    skills: ["Splunk", "Wazuh", "IBM QRadar", "Microsoft Sentinel", "ELK Stack"],
     color: "cyan",
+    skills: ["Splunk", "Microsoft Sentinel", "Wazuh", "ELK Stack", "Log Analysis"]
   },
   {
     title: "Security Frameworks",
     icon: Shield,
-    skills: ["MITRE ATT&CK", "OWASP Top 10", "ISO 27001", "NIST", "CIS Controls"],
     color: "blue",
+    skills: ["MITRE ATT&CK", "OWASP Top 10", "ISO 27001", "Cyber Kill Chain", "SOAR"]
   },
   {
     title: "Security Tools",
     icon: Bug,
-    skills: ["Wireshark", "Nmap", "Burp Suite", "Metasploit", "Nessus"],
     color: "red",
+    skills: ["Wireshark", "Nmap", "Burp Suite", "Metasploit", "Nessus"]
   },
   {
     title: "Network Security",
     icon: Network,
-    skills: ["TCP/IP", "Firewalls", "IDS/IPS", "VPN", "DNS Security"],
     color: "green",
+    skills: ["TCP/IP", "IDS/IPS", "Firewalls", "VPN", "DNS Security"]
   },
   {
     title: "Cloud & Endpoint",
     icon: Cloud,
-    skills: ["AWS", "Microsoft 365", "Microsoft Defender", "SentinelOne", "CrowdStrike"],
     color: "orange",
+    skills: ["AWS", "Microsoft 365", "Defender", "CrowdStrike", "SentinelOne"]
   },
   {
     title: "Programming",
     icon: Code,
-    skills: ["Python", "SQL", "Bash", "HTML/CSS", "JavaScript"],
     color: "yellow",
+    skills: ["Python", "SQL", "Bash", "PowerShell"]
   },
   {
     title: "Operating Systems",
     icon: Monitor,
-    skills: ["Windows Server", "Linux", "Kali Linux", "Ubuntu", "macOS"],
     color: "purple",
+    skills: ["Windows", "Linux", "Kali Linux", "Ubuntu"]
   },
   {
-    title: "Lab Platforms",
-    icon: Terminal,
-    skills: ["TryHackMe", "LetsDefend", "Hack The Box", "DVWA", "CyberDefenders"],
+    title: "Threat Intelligence",
+    icon: Database,
     color: "pink",
+    skills: ["Threat Hunting", "YARA", "Sigma Rules", "MISP"]
   },
+  {
+    title: "Identity & Access",
+    icon: Lock,
+    color: "teal",
+    skills: ["Active Directory", "Windows Domain"]
+  },
+  {
+    title: "Forensics",
+    icon: Terminal,
+    color: "rose",
+    skills: ["FTK Imager", "Registry Analysis", "Log Investigation"]
+  }
 ]
 
-const colorClasses: Record<string, { bg: string; border: string; text: string; glow: string }> = {
-  cyan: { bg: "bg-cyan-500/10", border: "border-cyan-500/30", text: "text-cyan-400", glow: "group-hover:shadow-cyan-500/20" },
-  blue: { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-400", glow: "group-hover:shadow-blue-500/20" },
-  red: { bg: "bg-red-500/10", border: "border-red-500/30", text: "text-red-400", glow: "group-hover:shadow-red-500/20" },
-  green: { bg: "bg-green-500/10", border: "border-green-500/30", text: "text-green-400", glow: "group-hover:shadow-green-500/20" },
-  orange: { bg: "bg-orange-500/10", border: "border-orange-500/30", text: "text-orange-400", glow: "group-hover:shadow-orange-500/20" },
-  yellow: { bg: "bg-yellow-500/10", border: "border-yellow-500/30", text: "text-yellow-400", glow: "group-hover:shadow-yellow-500/20" },
-  purple: { bg: "bg-purple-500/10", border: "border-purple-500/30", text: "text-purple-400", glow: "group-hover:shadow-purple-500/20" },
-  pink: { bg: "bg-pink-500/10", border: "border-pink-500/30", text: "text-pink-400", glow: "group-hover:shadow-pink-500/20" },
-}
-
 export function SkillsSection() {
-  return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-12">
-          <p className="text-cyan-400 font-medium mb-2 tracking-wider">TECHNICAL EXPERTISE</p>
-          <h2 className="text-4xl font-bold text-white mb-4">Skills & Technologies</h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Comprehensive cybersecurity toolkit built through hands-on labs, internships, and continuous learning
-          </p>
-        </div>
+  const [selected, setSelected] = useState<any>(null)
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skillCategories.map((category) => {
-            const colors = colorClasses[category.color]
-            const Icon = category.icon
+  return (
+    <section id="skills" className="py-20 px-4">
+      <div className="max-w-6xl mx-auto text-center">
+
+        <h2 className="text-4xl font-bold text-white mb-10">
+          Skills & Technologies
+        </h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {skillCategories.map((cat, i) => {
+            const Icon = cat.icon
+
             return (
               <div
-                key={category.title}
-                className={`group ${colors.bg} ${colors.border} border rounded-xl p-5 hover:scale-105 transition-all duration-300 hover:shadow-lg ${colors.glow}`}
+                key={i}
+                onClick={() => setSelected(cat)}
+                className={`cursor-pointer p-6 rounded-xl border border-${cat.color}-500/30 
+                bg-${cat.color}-500/5 hover:scale-105 transition-all duration-300
+                hover:shadow-[0_0_25px_rgba(0,255,255,0.4)]`}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-2 rounded-lg ${colors.bg} ${colors.border} border`}>
-                    <Icon className={`h-5 w-5 ${colors.text}`} />
+
+                <div className="flex flex-col items-center gap-3">
+
+                  <Icon className={`w-8 h-8 text-${cat.color}-400`} />
+
+                  <h3 className={`text-${cat.color}-400 font-semibold`}>
+                    {cat.title}
+                  </h3>
+
+                  <div className="flex flex-wrap gap-2 justify-center mt-2">
+                    {cat.skills.map((skill, idx) => (
+                      <span
+                        key={idx}
+                        className={`text-xs px-2 py-1 rounded-full 
+                        bg-${cat.color}-500/20 text-${cat.color}-400`}
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                  <h3 className="font-bold text-white text-sm">{category.title}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-xs bg-slate-800/80 text-slate-300 px-2.5 py-1 rounded-md border border-slate-700/50 hover:border-slate-600 transition-colors"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+
                 </div>
               </div>
             )
           })}
         </div>
+
+        {/* 🔥 POPUP MODAL */}
+        {selected && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-50">
+
+            <div className="p-8 rounded-xl bg-slate-900 text-center 
+            shadow-[0_0_40px_rgba(0,255,255,0.8)] animate-pulse">
+
+              <h3 className="text-2xl text-cyan-400 font-bold mb-4">
+                {selected.title}
+              </h3>
+
+              <div className="flex flex-wrap gap-2 justify-center">
+                {selected.skills.map((skill: string, i: number) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+
+              <button
+                onClick={() => setSelected(null)}
+                className="mt-6 px-4 py-2 bg-cyan-500 text-black rounded-lg hover:bg-cyan-400"
+              >
+                Close
+              </button>
+
+            </div>
+          </div>
+        )}
+
       </div>
     </section>
   )
