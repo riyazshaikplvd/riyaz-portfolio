@@ -130,58 +130,7 @@ export function HeroSection() {
             <MapPin className="h-5 w-5 text-cyan-400" />
             <span className="text-base font-bold">🇮🇳 India (Open to Relocation)</span>
           </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Button 
-              size="lg" 
-              className="relative overflow-hidden bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-500 hover:from-cyan-400 hover:via-cyan-300 hover:to-blue-400 text-slate-950 font-black text-base shadow-lg shadow-cyan-500/50 transition-all duration-300 hover:shadow-cyan-400/70 hover:scale-105 active:scale-95 px-8 py-6"
-              onClick={(e) => createClickEffect(e, 'white')}
-              asChild
-            >
-              <a href="/RIYAZ-SOC-L1.pdf" download>
-                {clickEffects.map(effect => (
-                  <span
-                    key={effect.id}
-                    className="absolute rounded-full pointer-events-none animate-[rippleExpand_0.8s_ease-out_forwards]"
-                    style={{
-                      left: effect.x,
-                      top: effect.y,
-                      transform: 'translate(-50%, -50%)',
-                      background: `radial-gradient(circle, ${effect.color}60 0%, transparent 70%)`,
-                    }}
-                  />
-                ))}
-                <Download className="h-5 w-5 mr-2" />
-                Download Resume
-              </a>
-            </Button>
-            <Button 
-              size="lg" 
-              className="relative overflow-hidden border-2 border-cyan-400 bg-cyan-500/20 text-cyan-300 hover:bg-cyan-500/30 hover:text-cyan-200 hover:border-cyan-300 transition-all duration-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.5)] hover:scale-105 active:scale-95 font-black text-base px-8 py-6"
-              onClick={(e) => createClickEffect(e, 'cyan')}
-              asChild
-            >
-              <a href="mailto:riyazshaikplvd@gmail.com">
-                {clickEffects.map(effect => (
-                  <span
-                    key={effect.id}
-                    className="absolute rounded-full pointer-events-none animate-[rippleExpand_0.8s_ease-out_forwards]"
-                    style={{
-                      left: effect.x,
-                      top: effect.y,
-                      transform: 'translate(-50%, -50%)',
-                      background: `radial-gradient(circle, ${effect.color}40 0%, transparent 70%)`,
-                    }}
-                  />
-                ))}
-                <Mail className="h-5 w-5 mr-2" />
-                Hire Me
-              </a>
-            </Button>
-          </div>
-
-          {/* Social Links - BRIGHT BRAND COLORS */}
+           {/* Social Links - BRIGHT BRAND COLORS */}
           <div className="flex flex-wrap justify-center gap-4">
             {/* LinkedIn */}
             <a
