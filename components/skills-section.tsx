@@ -15,7 +15,7 @@ import {
 } from "lucide-react"
 
 export default function SkillsSection() {
-  const [selected, setSelected] = useState(null)
+  const [selected, setSelected] = useState<any>(null)
 
   const skillCategories = [
     {
@@ -116,7 +116,7 @@ export default function SkillsSection() {
             </h3>
 
             <div className="flex flex-wrap gap-3 justify-center">
-              {selected.skills.map((skill, i) => (
+              {selected?.skills?.map((skill, i) => (
                 <span
                   key={i}
                   className="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full text-sm hover:scale-110 transition"
