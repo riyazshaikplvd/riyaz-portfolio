@@ -173,3 +173,6 @@ section {
   border-color: #22d3ee;
   box-shadow: 0 0 20px #22d3ee;
 }
+#cyber-labs {
+  scroll-margin-top: 80px;
+}
