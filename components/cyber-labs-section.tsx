@@ -1,7 +1,6 @@
 "use client"
 
 import { ExternalLink, Trophy, Star, Target, Award } from "lucide-react"
-import { useState, useRef, useCallback } from "react"
 
 const platforms = [
   {
@@ -84,21 +83,10 @@ const achievements = [
 ]
 
 export function CyberLabsSection() {
-  const [effects, setEffects] = useState<any[]>([])
-  const idRef = useRef(0)
-
-  const clickEffect = useCallback((e: any, color: string) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    const id = idRef.current++
-    setEffects((p) => [...p, { id, x: e.clientX - rect.left, y: e.clientY - rect.top, color }])
-    setTimeout(() => setEffects((p) => p.filter((x) => x.id !== id)), 600)
-  }, [])
-
   return (
     <section id="cyber-labs" className="py-12 px-4 bg-slate-900/30 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto w-full">
 
-        {/* HEADER */}
         <div className="text-center mb-8">
           <h2 className="text-3xl font-black text-white mb-2">
             Cyber <span className="text-cyan-400">Labs</span> & Platforms
@@ -108,7 +96,6 @@ export function CyberLabsSection() {
           </p>
         </div>
 
-        {/* CARDS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {platforms.map((p) => (
             <div key={p.name}
@@ -128,8 +115,7 @@ export function CyberLabsSection() {
                   </div>
                 </div>
 
-                <a href={p.url} target="_blank"
-                  onClick={(e) => clickEffect(e, p.textColor)}
+                <a href={p.url} target="_blank" rel="noopener noreferrer"
                   className={p.textColor}>
                   <ExternalLink size={16} />
                 </a>
@@ -144,8 +130,7 @@ export function CyberLabsSection() {
                 ))}
               </div>
 
-              <a href={p.url} target="_blank"
-                onClick={(e) => clickEffect(e, p.textColor)}
+              <a href={p.url} target="_blank" rel="noopener noreferrer"
                 className="block text-center text-xs bg-slate-800 hover:bg-slate-700 py-2 rounded text-white">
                 View Profile
               </a>
@@ -154,7 +139,6 @@ export function CyberLabsSection() {
           ))}
         </div>
 
-        {/* ACHIEVEMENTS */}
         <div className="border border-cyan-500/30 rounded-xl p-4">
           <h3 className="text-center text-white font-bold mb-3 text-lg">
             Achievements
