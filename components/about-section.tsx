@@ -26,9 +26,9 @@ export function AboutSection() {
             </span>
             , with a B.Tech in Computer Science (Data Science, 2025), currently pursuing{" "}
             <span className="text-pink-500 font-black drop-shadow-[0_0_10px_rgba(236,72,153,0.7)] bg-pink-500/10 px-2 py-0.5 rounded">
-              CompTIA Security+ & EC-Council Certified SOC Analyst (CSA) Certifications
+              CompTIA Security+  and  EC-Council Certified SOC Analyst (CSA) 
             </span>{" "}
-            certification to strengthen core security fundamentals.
+            Certifications to strengthen core security fundamentals.
           </p>
 
           <p>
