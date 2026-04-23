@@ -1,3 +1,5 @@
+"use client"
+
 import { GraduationCap, Award, MapPin, Calendar } from "lucide-react"
 
 const education = [
@@ -19,7 +21,7 @@ const education = [
     period: "2019 - 2021",
     score: "802/1000",
     icon: Award,
-    color: "blue",
+    color: "violet",
   },
   {
     degree: "SSC",
@@ -29,58 +31,106 @@ const education = [
     period: "2018 - 2019",
     score: "9.8 CGPA",
     icon: Award,
-    color: "green",
+    color: "emerald",
   },
 ]
 
-const colorClasses: Record<string, { bg: string; border: string; text: string; badge: string }> = {
-  cyan: { bg: "bg-cyan-500/10", border: "border-cyan-500/30", text: "text-cyan-400", badge: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30" },
-  blue: { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-400", badge: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
-  green: { bg: "bg-green-500/10", border: "border-green-500/30", text: "text-green-400", badge: "bg-green-500/20 text-green-400 border-green-500/30" },
+const colorClasses: Record<string, any> = {
+  cyan: {
+    bg: "bg-cyan-500/10",
+    border: "border-cyan-500/30",
+    glow: "hover:shadow-cyan-500/30",
+    text: "text-cyan-300",
+    badge: "bg-cyan-500/20 text-cyan-200 border-cyan-500/40",
+  },
+  violet: {
+    bg: "bg-violet-500/10",
+    border: "border-violet-500/30",
+    glow: "hover:shadow-violet-500/30",
+    text: "text-violet-300",
+    badge: "bg-violet-500/20 text-violet-200 border-violet-500/40",
+  },
+  emerald: {
+    bg: "bg-emerald-500/10",
+    border: "border-emerald-500/30",
+    glow: "hover:shadow-emerald-500/30",
+    text: "text-emerald-300",
+    badge: "bg-emerald-500/20 text-emerald-200 border-emerald-500/40",
+  },
 }
 
 export function EducationSection() {
   return (
-    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section
+      id="education"
+      className="py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24 animate-fadeIn"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-12">
-          <p className="text-cyan-400 font-medium mb-2 tracking-wider">ACADEMIC BACKGROUND</p>
-          <h2 className="text-4xl font-bold text-white mb-4">Education</h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+
+        {/* HEADER */}
+        <div className="text-center mb-14">
+          <p className="text-cyan-400 font-semibold mb-2 tracking-wider text-sm">
+            ACADEMIC BACKGROUND
+          </p>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+            Education
+          </h2>
+          <p className="text-slate-300 max-w-2xl mx-auto text-base">
             Strong academic foundation in Computer Science with specialization in Data Science
           </p>
         </div>
 
-        {/* Compact Education Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {/* CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {education.map((edu) => {
             const colors = colorClasses[edu.color]
             const Icon = edu.icon
+
             return (
               <div
                 key={edu.degree}
-                className={`${colors.bg} ${colors.border} border rounded-xl p-5 hover:scale-[1.02] transition-all duration-300`}
+                className={`
+                  ${colors.bg} ${colors.border}
+                  border rounded-xl p-6
+                  transition-all duration-300
+                  hover:scale-[1.03]
+                  hover:shadow-xl ${colors.glow}
+                  backdrop-blur-sm
+                `}
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`p-3 rounded-lg ${colors.bg} ${colors.border} border`}>
+                {/* TOP */}
+                <div className="flex items-start justify-between mb-5">
+                  <div className={`p-3 rounded-lg border ${colors.bg} ${colors.border}`}>
                     <Icon className={`h-6 w-6 ${colors.text}`} />
                   </div>
+
                   <span className={`text-sm font-bold px-3 py-1 rounded-full border ${colors.badge}`}>
                     {edu.score}
                   </span>
                 </div>
-                
-                <h3 className="font-bold text-white text-base mb-1">{edu.degree}</h3>
-                <p className="text-sm text-slate-400 mb-3">{edu.specialization}</p>
-                
-                <div className="space-y-1.5 text-xs text-slate-500">
-                  <p className="font-medium text-slate-300">{edu.institution}</p>
+
+                {/* TITLE */}
+                <h3 className="font-bold text-white text-lg mb-1 leading-snug">
+                  {edu.degree}
+                </h3>
+
+                <p className="text-sm text-slate-300 mb-4">
+                  {edu.specialization}
+                </p>
+
+                {/* DETAILS */}
+                <div className="space-y-2 text-sm text-slate-400">
+                  <p className="font-medium text-slate-200">
+                    {edu.institution}
+                  </p>
+
                   <div className="flex items-center gap-2">
-                    <MapPin className="h-3 w-3" />
+                    <MapPin className="h-4 w-4 text-slate-400" />
                     {edu.location}
                   </div>
+
                   <div className="flex items-center gap-2">
-                    <Calendar className="h-3 w-3" />
+                    <Calendar className="h-4 w-4 text-slate-400" />
                     {edu.period}
                   </div>
                 </div>
