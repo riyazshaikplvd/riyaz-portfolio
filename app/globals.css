@@ -9,11 +9,7 @@
 }
 
 /* ================= BASE ================= */
-@layer base {
-  body {
-    @apply bg-[#020617] text-slate-200;
-  }
-}
+
 
 /* ================= SCROLLBAR ================= */
 ::-webkit-scrollbar {
