@@ -176,3 +176,17 @@ section {
 #cyber-labs {
   scroll-margin-top: 80px;
 }
+@keyframes highlightBlink {
+  0% { box-shadow: 0 0 0px rgba(139,92,246,0); }
+  50% { box-shadow: 0 0 40px rgba(139,92,246,0.7); }
+  100% { box-shadow: 0 0 0px rgba(139,92,246,0); }
+}
+
+#education {
+  scroll-margin-top: 80px;
+}
+
+#education:target {
+  animation: highlightBlink 1.2s ease-in-out 2;
+  border-radius: 12px;
+}
