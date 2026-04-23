@@ -36,15 +36,20 @@ export default function SkillsSection() {
       icon: Shield,
       skills: ["MITRE ATT&CK", "OWASP Top 10", "ISO 27001", "NIST", "CIS Controls"],
     },
+   {
+      title: "Endpoint & Email Security",
+      icon: Monitor,
+      skills: ["SentinelOne", " CrowdStrike,", "Microsoft Defender for Endpoint", "LimaCharlie", "Windows Process Monitoring","Sysmon"],
+    },
     {
-      title: "Security Tools",
+      title: "Vulnerability Management",
       icon: Bug,
-      skills: ["Wireshark", "Nmap", "Burp Suite", "Metasploit", "Nessus"],
+      skills: ["Zenmap", "Nmap", "Burp Suite", "Metasploit", "Nessus"],
     },
     {
       title: "Network Security",
       icon: Network,
-      skills: ["TCP/IP", "IDS/IPS", "Firewalls", "VPN", "DNS Security"],
+      skills: ["TCP/IP", "IDS/IPS", "Firewalls", "VPN", "DNS Security", "Wireshark"],
     },
     {
       title: "Cloud & Endpoint",
@@ -59,7 +64,7 @@ export default function SkillsSection() {
     {
       title: "Operating Systems",
       icon: Monitor,
-      skills: ["Windows", "Linux", "Kali Linux", "Ubuntu"],
+      skills: ["Windows", "Linux", "VMware", "Ubuntu"],
     },
     {
       title: "Threat Intelligence",
@@ -67,9 +72,9 @@ export default function SkillsSection() {
       skills: ["Threat Hunting", "YARA", "Sigma Rules", "MISP"],
     },
     {
-      title: "Identity & Access",
+      title: "Digital Forensics",
       icon: Lock,
-      skills: ["Active Directory", "Windows Domain", "IAM Basics"],
+      skills: ["FTK imager", "Windows Forensics", "Log Investigation"],
     },
   ]
  
