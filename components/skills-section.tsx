@@ -52,7 +52,7 @@ export default function SkillsSection() {
       skills: ["TCP/IP", "IDS/IPS", "Firewalls", "VPN", "DNS Security", "Wireshark"],
     },
     {
-      title: "Cloud & Endpoint",
+      title: "Cloud Technologies",
       icon: Cloud,
       skills: ["AWS", "Microsoft 365", "Defender", "CrowdStrike", "SentinelOne"],
     },
@@ -70,6 +70,11 @@ export default function SkillsSection() {
       title: "Threat Intelligence",
       icon: Database,
       skills: ["Threat Hunting", "YARA", "Sigma Rules", "MISP"],
+    },
+    {
+      title: "Identity & Access",
+      icon: Shield,
+      skills: ["Active Directory (AD) Fundamentals,", "Windows Domain "],
     },
     {
       title: "Digital Forensics",
