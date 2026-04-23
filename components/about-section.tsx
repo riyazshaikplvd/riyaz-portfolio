@@ -46,7 +46,7 @@ export function AboutSection() {
               LetsDefend
             </span>
             , and{" "}
-            <span className="text-[#138808] font-black drop-shadow-[0_0_10px_rgba(19,136,8,0.7)] bg-[#138808]/10 px-2 py-0.5 rounded">
+            <span className="text-green-400 font-black drop-shadow-[0_0_6px_rgba(74,222,128,0.6)] bg-green-400/10 px-2 py-0.5 rounded">
               Hack The Box
             </span>
             .
