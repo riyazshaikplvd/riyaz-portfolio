@@ -6,7 +6,6 @@ import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import SkillsSection from "@/components/skills-section"
 import { ProjectsSection } from "@/components/projects-section"
-import { CapstoneProjectSection } from "@/components/capstone-project-section"
 import { CyberLabsSection } from "@/components/cyber-labs-section"
 import { ExperienceSection } from "@/components/experience-section"
 import { EducationSection } from "@/components/education-section"
@@ -58,7 +57,6 @@ export default function Portfolio() {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
-        <CapstoneProjectSection />
         <CyberLabsSection />
         <ExperienceSection />
         <EducationSection />
