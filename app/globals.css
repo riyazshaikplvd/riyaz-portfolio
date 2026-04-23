@@ -9,7 +9,13 @@
 }
 
 /* ================= BASE ================= */
-
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+}
 
 /* ================= SCROLLBAR ================= */
 ::-webkit-scrollbar {
