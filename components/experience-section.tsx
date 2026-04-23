@@ -24,13 +24,10 @@ export function ExperienceSection() {
 
           <div className="relative">
 
-            {/* Timeline Line */}
-            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 to-blue-500" />
-
-            <div className="relative pl-16">
+            <div className="relative">
 
               {/* Timeline Dot */}
-              <div className="absolute left-4 top-0 w-5 h-5 rounded-full bg-cyan-500 border-4 border-slate-950 shadow-lg shadow-cyan-500/40" />
+              <div className="absolute -left-2 top-2 w-5 h-5 rounded-full bg-cyan-500 border-4 border-slate-950 shadow-lg shadow-cyan-500/40" />
 
               <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-8 hover:border-cyan-500/40 transition">
 
@@ -63,9 +60,8 @@ export function ExperienceSection() {
                   </div>
                 </div>
 
-                {/* POINTS (UPGRADED + STRONG) */}
-                <div className="grid gap-4 mb-6">
-
+                {/* POINTS */}
+                <div className="grid gap-4">
                   {[
                     "Monitored and analyzed 50+ daily SIEM alerts using Splunk and Wazuh to identify and investigate potential security incidents",
                     "Performed log analysis on Windows Event Logs and Linux syslogs to detect suspicious activity and security threats",
@@ -83,30 +79,6 @@ export function ExperienceSection() {
                         {point}
                       </p>
                     </div>
-                  ))}
-
-                </div>
-
-                {/* SKILLS TAGS */}
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    "SIEM Monitoring",
-                    "Incident Response",
-                    "Log Analysis",
-                    "Threat Detection",
-                    "Alert Triage",
-                    "Splunk",
-                    "Wazuh",
-                    "Risk Assessment",
-                    "Compliance",
-                    "Vendor Assessment"
-                  ].map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-xs bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 px-3 py-1.5 rounded-full font-semibold"
-                    >
-                      {skill}
-                    </span>
                   ))}
                 </div>
 
