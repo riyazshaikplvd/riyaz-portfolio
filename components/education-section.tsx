@@ -38,50 +38,47 @@ const education = [
 const colorClasses: Record<string, any> = {
   cyan: {
     bg: "bg-cyan-500/10",
-    border: "border-cyan-500/30",
-    glow: "hover:shadow-cyan-500/30",
+    border: "border-cyan-400/70",
+    glow: "hover:shadow-[0_0_25px_rgba(34,211,238,0.6)]",
     text: "text-cyan-300",
-    badge: "bg-cyan-500/20 text-cyan-200 border-cyan-500/40",
+    badge: "bg-cyan-500/20 text-cyan-200 border-cyan-400/60",
   },
   violet: {
     bg: "bg-violet-500/10",
-    border: "border-violet-500/30",
-    glow: "hover:shadow-violet-500/30",
+    border: "border-violet-400/70",
+    glow: "hover:shadow-[0_0_25px_rgba(168,85,247,0.6)]",
     text: "text-violet-300",
-    badge: "bg-violet-500/20 text-violet-200 border-violet-500/40",
+    badge: "bg-violet-500/20 text-violet-200 border-violet-400/60",
   },
   emerald: {
     bg: "bg-emerald-500/10",
-    border: "border-emerald-500/30",
-    glow: "hover:shadow-emerald-500/30",
+    border: "border-emerald-400/70",
+    glow: "hover:shadow-[0_0_25px_rgba(16,185,129,0.6)]",
     text: "text-emerald-300",
-    badge: "bg-emerald-500/20 text-emerald-200 border-emerald-500/40",
+    badge: "bg-emerald-500/20 text-emerald-200 border-emerald-400/60",
   },
 }
 
 export function EducationSection() {
   return (
-    <section
-      id="education"
-      className="py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24 animate-fadeIn"
-    >
+    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
 
         {/* HEADER */}
-        <div className="text-center mb-14">
-          <p className="text-cyan-400 font-semibold mb-2 tracking-wider text-sm">
+        <div className="text-center mb-12">
+          <p className="text-cyan-400 font-medium mb-2 tracking-wider">
             ACADEMIC BACKGROUND
           </p>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Education
           </h2>
-          <p className="text-slate-300 max-w-2xl mx-auto text-base">
+          <p className="text-slate-300 max-w-2xl mx-auto">
             Strong academic foundation in Computer Science with specialization in Data Science
           </p>
         </div>
 
         {/* CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {education.map((edu) => {
             const colors = colorClasses[edu.color]
             const Icon = edu.icon
@@ -91,15 +88,14 @@ export function EducationSection() {
                 key={edu.degree}
                 className={`
                   ${colors.bg} ${colors.border}
-                  border rounded-xl p-6
+                  border-2 rounded-xl p-6
                   transition-all duration-300
                   hover:scale-[1.03]
                   hover:shadow-xl ${colors.glow}
-                  backdrop-blur-sm
                 `}
               >
                 {/* TOP */}
-                <div className="flex items-start justify-between mb-5">
+                <div className="flex items-start justify-between mb-4">
                   <div className={`p-3 rounded-lg border ${colors.bg} ${colors.border}`}>
                     <Icon className={`h-6 w-6 ${colors.text}`} />
                   </div>
@@ -110,11 +106,11 @@ export function EducationSection() {
                 </div>
 
                 {/* TITLE */}
-                <h3 className="font-bold text-white text-lg mb-1 leading-snug">
+                <h3 className="font-bold text-white text-base mb-1">
                   {edu.degree}
                 </h3>
 
-                <p className="text-sm text-slate-300 mb-4">
+                <p className="text-sm text-slate-300 mb-3">
                   {edu.specialization}
                 </p>
 
@@ -125,19 +121,21 @@ export function EducationSection() {
                   </p>
 
                   <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-slate-400" />
+                    <MapPin className="h-4 w-4" />
                     {edu.location}
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-slate-400" />
+                    <Calendar className="h-4 w-4" />
                     {edu.period}
                   </div>
                 </div>
+
               </div>
             )
           })}
         </div>
+
       </div>
     </section>
   )
