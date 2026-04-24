@@ -1,5 +1,5 @@
 "use client"
- 
+
 import { useState } from "react"
 import {
   Shield,
@@ -13,18 +13,16 @@ import {
   Lock,
 } from "lucide-react"
 import { LucideIcon } from "lucide-react"
- 
-// ✅ FIX: Proper TypeScript interface instead of `any`
+
 interface SkillCategory {
   title: string
   icon: LucideIcon
   skills: string[]
 }
- 
+
 export default function SkillsSection() {
-  // ✅ FIX: Typed state — SkillCategory | null instead of any
   const [selected, setSelected] = useState<SkillCategory | null>(null)
- 
+
   const skillCategories: SkillCategory[] = [
     {
       title: "SIEM Tools",
@@ -36,10 +34,10 @@ export default function SkillsSection() {
       icon: Shield,
       skills: ["MITRE ATT&CK", "OWASP Top 10", "ISO 27001", "NIST", "CIS Controls"],
     },
-   {
+    {
       title: "Endpoint & Email Security",
       icon: Monitor,
-      skills: ["SentinelOne", " CrowdStrike,", "Microsoft Defender for Endpoint", "LimaCharlie", "Windows Process Monitoring","Sysmon"],
+      skills: ["SentinelOne", "CrowdStrike", "Microsoft Defender for Endpoint", "LimaCharlie", "Sysmon"],
     },
     {
       title: "Vulnerability Management",
@@ -74,25 +72,30 @@ export default function SkillsSection() {
     {
       title: "Identity & Access",
       icon: Shield,
-      skills: ["Active Directory (AD) Fundamentals,", "Windows Domain "],
+      skills: ["Active Directory (AD)", "Windows Domain"],
     },
     {
       title: "Digital Forensics",
       icon: Lock,
-      skills: ["FTK imager", "Windows Forensics", "Log Investigation"],
+      skills: ["FTK Imager", "Windows Forensics", "Log Investigation"],
     },
   ]
- 
+
   return (
-    <section id="skills" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto text-center">
+    <section
+      id="skills"
+      className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8"
+    >
+      <div className="max-w-6xl mx-auto text-center w-full">
+
         <h2 className="text-4xl font-bold text-white mb-4">
           Skills & Technologies
         </h2>
+
         <p className="text-slate-400 mb-12">
           Hands-on cybersecurity skills built through labs and real-world practice
         </p>
- 
+
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, i) => {
@@ -115,20 +118,21 @@ export default function SkillsSection() {
           })}
         </div>
       </div>
- 
-      {/* POPUP MODAL */}
+
+      {/* MODAL */}
       {selected && (
         <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-          onClick={() => setSelected(null)} // ✅ click outside to close
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4"
+          onClick={() => setSelected(null)}
         >
           <div
             className="bg-slate-900 p-8 rounded-xl max-w-lg w-full shadow-2xl border border-cyan-500/30"
-            onClick={(e) => e.stopPropagation()} // ✅ prevent close on inner click
+            onClick={(e) => e.stopPropagation()}
           >
             <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">
               {selected.title}
             </h3>
+
             <div className="flex flex-wrap gap-3 justify-center">
               {selected.skills.map((skill, i) => (
                 <span
@@ -139,6 +143,7 @@ export default function SkillsSection() {
                 </span>
               ))}
             </div>
+
             <button
               onClick={() => setSelected(null)}
               className="mt-6 w-full py-2 bg-cyan-500 text-black rounded-lg hover:bg-cyan-400 transition font-semibold"
