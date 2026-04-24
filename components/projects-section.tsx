@@ -99,13 +99,16 @@ const colorClasses = {
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
-      <div className="mx-auto max-w-7xl">
+    <section
+      id="projects"
+      className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30"
+    >
+      <div className="mx-auto max-w-7xl w-full">
 
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4">
-             My Projects
+            My Projects
           </h2>
         </div>
 
@@ -121,7 +124,6 @@ export function ProjectsSection() {
                 className={`group ${colors.bg} ${colors.border} border rounded-xl p-6 hover:scale-[1.02] transition-all duration-300 flex flex-col gap-4`}
               >
 
-                {/* Top */}
                 <div className="flex items-start justify-between">
                   <div className={`p-3 rounded-lg ${colors.bg} ${colors.border} border`}>
                     <Icon className={`h-6 w-6 ${colors.text}`} />
@@ -132,29 +134,22 @@ export function ProjectsSection() {
                   </span>
                 </div>
 
-                {/* Title */}
                 <h3 className="text-lg font-bold text-white">
                   {project.title}
                 </h3>
 
-                {/* Description */}
                 <p className="text-slate-400 text-sm">
                   {project.description}
                 </p>
 
-                {/* Tools */}
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-xs bg-slate-800 px-2 py-1 rounded"
-                    >
+                    <span key={tech} className="text-xs bg-slate-800 px-2 py-1 rounded">
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Highlights */}
                 <ul className="space-y-1 text-xs">
                   {project.highlights.map((item) => (
                     <li key={item} className={`${colors.dot}`}>
