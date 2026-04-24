@@ -26,18 +26,25 @@ const badges = [
 
 export function CertificationsSection() {
   return (
-    <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
-      <div className="mx-auto max-w-7xl">
+    <section
+      id="certifications"
+      className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30"
+    >
+      <div className="mx-auto max-w-7xl w-full">
 
         {/* HEADER */}
         <div className="text-center mb-12">
-          <p className="text-cyan-400 font-black mb-2 tracking-wider text-lg">// CREDENTIALS</p>
+          <p className="text-cyan-400 font-black mb-2 tracking-wider text-lg">
+            // CREDENTIALS
+          </p>
+
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
             Training &{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
               Certifications
             </span>
           </h2>
+
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full" />
         </div>
 
@@ -75,8 +82,13 @@ export function CertificationsSection() {
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-black text-white text-base mb-1">{cert.name}</h4>
-                  <p className="text-sm text-slate-300 font-semibold mb-2">{cert.issuer}</p>
+                  <h4 className="font-black text-white text-base mb-1">
+                    {cert.name}
+                  </h4>
+
+                  <p className="text-sm text-slate-300 font-semibold mb-2">
+                    {cert.issuer}
+                  </p>
 
                   {cert.status === "pursuing" ? (
                     <span className="inline-flex items-center gap-1 text-sm bg-gradient-to-r from-orange-500 to-amber-500 text-white px-3 py-1 rounded-full font-bold">
@@ -110,8 +122,12 @@ export function CertificationsSection() {
               >
                 <div className="bg-slate-900 rounded-full px-4 py-2 flex items-center gap-2">
                   <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${badge.color}`} />
-                  <span className={`text-sm font-black ${badge.textColor}`}>{badge.name}</span>
-                  <span className="text-xs text-slate-400 font-semibold">| {badge.issuer}</span>
+                  <span className={`text-sm font-black ${badge.textColor}`}>
+                    {badge.name}
+                  </span>
+                  <span className="text-xs text-slate-400 font-semibold">
+                    | {badge.issuer}
+                  </span>
                 </div>
               </div>
             ))}
