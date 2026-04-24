@@ -194,3 +194,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
 }
+/* Fix scroll gap for fixed header */
+section[id] {
+  scroll-margin-top: 72px;
+}
