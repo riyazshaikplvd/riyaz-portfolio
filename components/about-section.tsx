@@ -4,7 +4,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-screen pt-16 px-4 sm:px-6 lg:px-8 scroll-mt-16 bg-slate-950"
+      className="min-h-screen pt-10 px-4 sm:px-6 lg:px-8 scroll-mt-10 bg-slate-950"
     >
       <div className="mx-auto max-w-5xl w-full text-center">
         
