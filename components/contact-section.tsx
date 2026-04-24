@@ -31,6 +31,7 @@ export function ContactSection() {
             I&apos;m actively seeking{" "}
             <span className="text-cyan-400 font-bold">SOC Analyst</span> and{" "}
             <span className="text-blue-400 font-bold">Cybersecurity</span> opportunities.
+            Let's discuss how i can contribute to your Security Team.
           </p>
         </div>
 
