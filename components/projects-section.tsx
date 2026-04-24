@@ -105,7 +105,7 @@ export function ProjectsSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Projects & Labs
+             My Projects
           </h2>
         </div>
 
