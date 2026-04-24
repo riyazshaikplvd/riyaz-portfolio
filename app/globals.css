@@ -190,3 +190,7 @@ section {
   animation: highlightBlink 1.2s ease-in-out 2;
   border-radius: 12px;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
