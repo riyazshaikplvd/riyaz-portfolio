@@ -63,18 +63,20 @@ export function EducationSection() {
   return (
     <section
       id="education"
-      className="py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24 animate-fadeIn"
+      className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl w-full">
 
         {/* HEADER */}
         <div className="text-center mb-14">
           <p className="text-cyan-400 font-semibold mb-2 tracking-wider text-sm">
             ACADEMIC BACKGROUND
           </p>
+
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
             Education
           </h2>
+
           <p className="text-slate-300 max-w-2xl mx-auto text-base">
             Strong academic foundation in Computer Science with specialization in Data Science
           </p>
@@ -134,10 +136,12 @@ export function EducationSection() {
                     {edu.period}
                   </div>
                 </div>
+
               </div>
             )
           })}
         </div>
+
       </div>
     </section>
   )
