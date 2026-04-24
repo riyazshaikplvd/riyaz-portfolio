@@ -30,14 +30,13 @@ export function Header() {
   }, [])
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-slate-950/95 backdrop-blur-md border-b border-cyan-500/20 shadow-lg shadow-cyan-500/5"
-          : "bg-transparent"
-      }`}
-    >
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled
+        ? "bg-slate-950/95 backdrop-blur-md border-b border-cyan-500/20 shadow-lg shadow-cyan-500/5"
+        : "bg-transparent"
+    }`}>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
         <div className="flex h-20 items-center justify-between">
 
           {/* LOGO */}
@@ -53,7 +52,6 @@ export function Header() {
 
           {/* DESKTOP NAV */}
           <div className="hidden lg:flex items-center gap-3">
-
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -71,7 +69,6 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-
           </div>
 
           {/* RESUME BUTTON */}
@@ -88,7 +85,12 @@ export function Header() {
               "
               asChild
             >
-              <a href="/RIYAZ-SOC-L1.pdf" download>
+              <a
+                href="/RIYAZ-SOC-L1.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Download className="h-5 w-5 mr-2" />
                 Resume
               </a>
@@ -106,6 +108,7 @@ export function Header() {
               <Menu className="h-7 w-7" />
             )}
           </button>
+
         </div>
 
         {/* MOBILE NAV */}
@@ -142,7 +145,12 @@ export function Header() {
                   "
                   asChild
                 >
-                  <a href="/RIYAZ-SOC-L1.pdf" download>
+                  <a
+                    href="/RIYAZ-SOC-L1.pdf"
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Download className="h-5 w-5 mr-2" />
                     Download Resume
                   </a>
@@ -152,6 +160,7 @@ export function Header() {
             </div>
           </div>
         )}
+
       </nav>
     </header>
   )
