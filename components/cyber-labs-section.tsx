@@ -91,8 +91,11 @@ export function CyberLabsSection() {
   }, [])
 
   return (
-    <section id="cyber-labs" className="py-8 px-4 bg-slate-900/30">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="cyber-labs"
+      className="min-h-screen flex items-center justify-center py-10 px-4 bg-slate-900/30"
+    >
+      <div className="max-w-7xl mx-auto w-full">
 
         {/* HEADER */}
         <div className="text-center mb-6">
@@ -142,10 +145,7 @@ export function CyberLabsSection() {
 
               <div className="grid grid-cols-3 gap-1 text-center mb-2">
                 {p.stats.map((s) => (
-                  <div
-                    key={s.label}
-                    className="bg-slate-800/50 p-1.5 rounded"
-                  >
+                  <div key={s.label} className="bg-slate-800/50 p-1.5 rounded">
                     <p className={`text-xs font-bold ${s.color}`}>
                       {s.value}
                     </p>
@@ -168,14 +168,13 @@ export function CyberLabsSection() {
           ))}
         </div>
 
-        {/* ACHIEVEMENTS (EXACT STYLE RESTORED) */}
+        {/* ACHIEVEMENTS */}
         <div className="border border-cyan-500/30 rounded-xl p-4">
           <h3 className="text-center text-white font-bold mb-3 text-lg">
             Achievements & <span className="text-yellow-400">Badges</span>
           </h3>
 
           <div className="flex flex-wrap justify-center gap-2">
-
             <div className="flex items-center gap-2 px-3 py-1 rounded-full border border-yellow-500/30 bg-yellow-500/10">
               <Trophy className="w-3 h-3 text-yellow-400" />
               <span className="text-xs text-white">TryHackMe Top 25%</span>
@@ -215,7 +214,6 @@ export function CyberLabsSection() {
               <Award className="w-3 h-3 text-pink-400" />
               <span className="text-xs text-white">Incident Management</span>
             </div>
-
           </div>
         </div>
 
