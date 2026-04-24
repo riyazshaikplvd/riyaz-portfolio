@@ -4,17 +4,22 @@ import { Building2, Calendar, CheckCircle, MapPin, Briefcase } from "lucide-reac
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
-      <div className="mx-auto max-w-7xl">
+    <section
+      id="experience"
+      className="min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30"
+    >
+      <div className="mx-auto max-w-7xl w-full">
 
         {/* HEADER */}
         <div className="text-center mb-12">
           <p className="text-cyan-400 font-semibold mb-2 tracking-wider text-sm">
             PROFESSIONAL EXPERIENCE
           </p>
+
           <h2 className="text-4xl font-extrabold text-white mb-4">
             Work Experience
           </h2>
+
           <p className="text-slate-300 max-w-2xl mx-auto text-base">
             Hands-on experience in cybersecurity operations, incident response, and SOC monitoring
           </p>
@@ -34,6 +39,7 @@ export function ExperienceSection() {
                 {/* TOP */}
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                   <div>
+
                     <div className="flex items-center gap-2 mb-2">
                       <Briefcase className="h-5 w-5 text-cyan-400" />
                       <h3 className="text-2xl font-bold text-white">
@@ -52,6 +58,7 @@ export function ExperienceSection() {
                         Vizag, India
                       </span>
                     </div>
+
                   </div>
 
                   <div className="flex items-center gap-2 text-slate-200 text-sm bg-slate-800 px-4 py-2 rounded-full border border-slate-700">
@@ -83,6 +90,7 @@ export function ExperienceSection() {
                 </div>
 
               </div>
+
             </div>
           </div>
 
