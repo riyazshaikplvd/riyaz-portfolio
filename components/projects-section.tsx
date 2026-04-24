@@ -1,131 +1,124 @@
-import { Shield, Bug, Brain, Skull, Cloud, Terminal } from "lucide-react"
-
-const projects = [
-  {
-    title: "Threat Detection & Incident Response Lab",
-    type: "TryHackMe SOC Path",
-    description: "Completed comprehensive SOC Level 1 Analyst Path covering real-world alert triage, SIEM dashboards, log analysis, and incident escalation procedures.",
-    technologies: ["Splunk", "Log Analysis", "Alert Triage", "SIEM", "Incident Response"],
-    icon: Shield,
-    color: "blue",
-    highlights: ["30+ simulated attacks detected", "Splunk Dashboard analysis", "Real-world escalation workflows"],
-  },
-  {
-    title: "OWASP Top 10 Lab Series",
-    type: "Security Research",
-    description: "Simulated and mitigated OWASP vulnerabilities including XSS, SQL Injection, and Broken Authentication using professional penetration testing tools.",
-    technologies: ["Burp Suite", "DVWA", "SQL Injection", "XSS", "OWASP"],
-    icon: Bug,
-    color: "red",
-    highlights: ["XSS vulnerability exploitation", "SQL Injection testing", "Authentication bypass"],
-  },
-  {
-    title: "Deep Fake Source Identifier",
-    type: "AI/ML Security Project",
-    description: "Built an NLP-based deep learning system to detect AI-generated (deepfake) and bot-driven content on social media, supporting misinformation detection.",
-    technologies: ["Python", "NLP", "Deep Learning", "PHP", "MySQL"],
-    icon: Brain,
-    color: "purple",
-    highlights: ["NLP content analysis", "Bot detection algorithms", "Misinformation identification"],
-  },
-  {
-    title: "Malware Simulation Lab",
-    type: "SkillsUprise Hackathon",
-    description: "Designed ethical malware simulations to understand attacker techniques including clickjacking, remote command execution, and data exfiltration patterns.",
-    technologies: ["Malware Analysis", "C2 Workflows", "Incident Response", "Logging"],
-    icon: Skull,
-    color: "orange",
-    highlights: ["Ethical malware simulation", "C2 workflow analysis", "SOC-ready detection insights"],
-  },
-  {
-    title: "Cloud Security Monitoring",
-    type: "Cloud Security Project",
-    description: "Implemented Microsoft Defender for Cloud to monitor and enhance endpoint protection across cloud infrastructure with real-time threat detection.",
-    technologies: ["Microsoft Defender", "Cloud Security", "Endpoint Protection", "Azure"],
-    icon: Cloud,
-    color: "green",
-    highlights: ["Defender implementation", "Endpoint monitoring", "Security posture enhancement"],
-  },
-  {
-    title: "SOC Automation Scripts",
-    type: "Python Automation",
-    description: "Developed Python scripts for log parsing, alert correlation, and automated incident ticket generation to streamline SOC operations workflow.",
-    technologies: ["Python", "Automation", "Log Parsing", "SIEM Integration"],
-    icon: Terminal,
-    color: "cyan",
-    highlights: ["Automated log parsing", "Alert correlation scripts", "Incident ticket automation"],
-  },
-]
-
-const colorClasses: Record<string, { bg: string; border: string; text: string; badge: string }> = {
-  cyan: { bg: "bg-cyan-500/10", border: "border-cyan-500/30", text: "text-cyan-400", badge: "bg-cyan-500/20 text-cyan-300 border-cyan-500/30" },
-  blue: { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-400", badge: "bg-blue-500/20 text-blue-300 border-blue-500/30" },
-  red: { bg: "bg-red-500/10", border: "border-red-500/30", text: "text-red-400", badge: "bg-red-500/20 text-red-300 border-red-500/30" },
-  purple: { bg: "bg-purple-500/10", border: "border-purple-500/30", text: "text-purple-400", badge: "bg-purple-500/20 text-purple-300 border-purple-500/30" },
-  orange: { bg: "bg-orange-500/10", border: "border-orange-500/30", text: "text-orange-400", badge: "bg-orange-500/20 text-orange-300 border-orange-500/30" },
-  green: { bg: "bg-green-500/10", border: "border-green-500/30", text: "text-green-400", badge: "bg-green-500/20 text-green-300 border-green-500/30" },
-}
+"use client"
 
 export function ProjectsSection() {
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-5xl">
+
+        {/* HEADER */}
         <div className="text-center mb-12">
-          <p className="text-cyan-400 font-medium mb-2 tracking-wider">PORTFOLIO</p>
-          <h2 className="text-4xl font-bold text-white mb-4">Projects & Labs</h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Hands-on security projects demonstrating practical threat detection, incident response, and vulnerability assessment capabilities
-          </p>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Projects
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => {
-            const colors = colorClasses[project.color]
-            const Icon = project.icon
-            return (
-              <div
-                key={project.title}
-                className={`group ${colors.bg} ${colors.border} border rounded-xl p-6 hover:scale-[1.02] transition-all duration-300 flex flex-col`}
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`p-3 rounded-lg ${colors.bg} ${colors.border} border group-hover:scale-110 transition-transform`}>
-                    <Icon className={`h-6 w-6 ${colors.text}`} />
-                  </div>
-                  <span className={`text-xs px-3 py-1 rounded-full border ${colors.badge}`}>
-                    {project.type}
-                  </span>
-                </div>
+        {/* PROJECT LIST */}
+        <div className="space-y-12 text-slate-300 leading-relaxed text-[15px]">
 
-                <h3 className="text-lg font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-slate-400 text-sm mb-4 flex-1 leading-relaxed">{project.description}</p>
+          {/* 1 */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-2">
+              Virtual SOC with Real-Time Threat Detection – Cyber Guide
+            </h3>
+            <p>
+              Built a virtual SOC environment using ELK Stack/Wazuh for real-time threat detection and log analysis on Ubuntu to monitor and analyze security events from Windows and Linux endpoints through centralized SIEM dashboards. Created 15+ detection rules and Sigma Rules for brute-force attacks, privilege escalation, and port-scanning activities mapped to MITRE ATT&CK framework and Cyber Kill Chain stages. Monitored Active Directory events and performed alert triage, investigation, escalation, and reporting to simulate real SOC workflows.
+            </p>
 
-                <div className="space-y-4">
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.technologies.slice(0, 4).map((tech) => (
-                      <span key={tech} className="text-xs bg-slate-800/80 text-slate-300 px-2 py-1 rounded border border-slate-700/50">
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 4 && (
-                      <span className="text-xs bg-slate-800/80 text-slate-400 px-2 py-1 rounded border border-slate-700/50">
-                        +{project.technologies.length - 4}
-                      </span>
-                    )}
-                  </div>
+            <ul className="mt-3 space-y-1 text-sm text-cyan-400">
+              <li>• ELK Stack / Wazuh</li>
+              <li>• Splunk</li>
+              <li>• Kali Linux & Metasploit</li>
+              <li>• Wireshark</li>
+            </ul>
+          </div>
 
-                  <ul className="space-y-1.5">
-                    {project.highlights.map((highlight) => (
-                      <li key={highlight} className="text-xs text-slate-500 flex items-center gap-2">
-                        <span className={`w-1.5 h-1.5 rounded-full ${colors.text} bg-current flex-shrink-0`} />
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )
-          })}
+          {/* 2 */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-2">
+              OWASP Top 10 Lab Series
+            </h3>
+            <p>
+              Exploited 8 OWASP Top 10 vulnerabilities including XSS, SQL Injection, Brute Force, Command Injection, File Upload, CSRF, File Inclusion, and Broken Authentication using professional penetration testing tools. Documented payloads, exploitation steps, and secure fixes.
+            </p>
+
+            <ul className="mt-3 space-y-1 text-sm text-red-400">
+              <li>• Burp Suite</li>
+              <li>• DVWA</li>
+              <li>• SQL Injection / XSS</li>
+              <li>• Web Security Testing</li>
+            </ul>
+          </div>
+
+          {/* 3 */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-2">
+              Deep Fake Source Identifier – B.Tech Final Year
+            </h3>
+            <p>
+              Built an NLP-based deep learning system using Python, PHP, and MySQL to detect AI-generated (deepfake) and bot-driven content on social media. Focused on misinformation detection and security threat analysis.
+            </p>
+
+            <ul className="mt-3 space-y-1 text-sm text-purple-400">
+              <li>• Python</li>
+              <li>• NLP / Deep Learning</li>
+              <li>• PHP</li>
+              <li>• MySQL</li>
+            </ul>
+          </div>
+
+          {/* 4 */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-2">
+              Threat Detection & Incident Response Lab – TryHackMe
+            </h3>
+            <p>
+              Detected and analyzed 30+ simulated attacks using Splunk dashboards. Covered alert triage, SIEM dashboards, Windows Event Log analysis, network traffic analysis, phishing, malware analysis, and incident escalation.
+            </p>
+
+            <ul className="mt-3 space-y-1 text-sm text-blue-400">
+              <li>• Splunk</li>
+              <li>• SIEM & Log Analysis</li>
+              <li>• Windows Event Logs</li>
+              <li>• Network Traffic Analysis</li>
+            </ul>
+          </div>
+
+          {/* 5 */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-2">
+              Malware Simulation Lab – SkillsUprise Hackathon
+            </h3>
+            <p>
+              Designed ethical malware simulations to understand attacker techniques like clickjacking, remote command execution, and data exfiltration. Built C2 workflows and SOC-ready detection insights.
+            </p>
+
+            <ul className="mt-3 space-y-1 text-sm text-orange-400">
+              <li>• Malware Analysis</li>
+              <li>• C2 Workflows</li>
+              <li>• Incident Response</li>
+              <li>• Logging Techniques</li>
+            </ul>
+          </div>
+
+          {/* 6 */}
+          <div>
+            <h3 className="text-lg font-bold text-white mb-2">
+              Cloud Security Mini Project
+            </h3>
+            <p>
+              Implemented Microsoft Defender for Cloud to monitor endpoints, configure policies, analyze alerts, and generate reports for enhanced endpoint protection and security posture.
+            </p>
+
+            <ul className="mt-3 space-y-1 text-sm text-green-400">
+              <li>• Microsoft Defender for Cloud</li>
+              <li>• Azure</li>
+              <li>• Endpoint Protection</li>
+              <li>• Security Monitoring</li>
+            </ul>
+          </div>
+
         </div>
+
       </div>
     </section>
   )
