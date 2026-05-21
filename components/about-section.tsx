@@ -50,7 +50,7 @@ export function AboutSection() {
             </span>
             , and{" "}
             <span className="text-green-400 font-black drop-shadow-[0_0_6px_rgba(74,222,128,0.6)] bg-green-400/10 px-2 py-0.5 rounded">
-              Hack The Box
+              Blue Team Labs Online
             </span>
             .
           </p>
